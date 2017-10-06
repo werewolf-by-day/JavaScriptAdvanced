@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Hunting Github Assignment</title>
+	</head>
+	<body>	
+		<input type="button" value="Display my Github name using their API">
+		<div class="name"></div>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			$("input").click(function() {
+				$.get("https://api.github.com/users/werewolf-by-day", displayName);
+				function displayName(data) {
+					$(".name").html("<h1>" + data.name + "</h1> <p>AKA<p> <h2>" + data.login + "</h2>");
+				}
+			});
+		</script>
+	</body>
+</html>
